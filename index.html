@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
+    <style>
+        .active{
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
@@ -16,6 +21,7 @@
             <input type="text" name="password-display" id="password-display" placeholder="PASSWORD" readonly>
 
             <img src="Asset/copy_btn.svg" alt="copy button" id="copy-btn" height="25px">
+            <span id="copiedText" class="active">Copied!</span>
 
         </div>
 
