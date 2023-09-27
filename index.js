@@ -27,7 +27,7 @@ function handleSlider(){
     
 }
 
-inputSlider.addEventListener('change', function(e){
+inputSlider.addEventListener('input', function(e){
     // passwordLength = e.target.value
     // lengthNumber.innerHTML = passwordLength;
     handleSlider();
