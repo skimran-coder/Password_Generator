@@ -13,11 +13,10 @@ A simple web-based tool to generate strong and secure passwords with various opt
 - [How It Works](#how-it-works)
 - [Customization](#customization)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Demo
 
-You can try the live demo of this Password Generator [here](link-to-demo).
+You can try the live demo of this Password Generator [here](https://skimran-coder.github.io/Password_Generator/).
 
 ## Features
 
@@ -28,7 +27,7 @@ You can try the live demo of this Password Generator [here](link-to-demo).
 
 ## Usage
 
-1. Visit the [Password Generator](link-to-demo) website.
+1. Visit the [Password Generator](https://skimran-coder.github.io/Password_Generator/) website.
 2. Adjust the password length using the slider.
 3. Choose the character types you want to include in your password.
 4. The strength indicator will display the password's security level.
@@ -43,7 +42,7 @@ If you want to run this project locally, follow these steps:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/your-username/password-generator.git
+   git clone https://github.com/skimran-coder/Password_Generator.git
    ```
 
 2. Open the `index.html` file in your web browser.
@@ -72,10 +71,4 @@ If you'd like to contribute to this project, please follow these guidelines:
 4. Push to your branch: `git push origin feature-name`.
 5. Submit a pull request.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---
-
-Feel free to replace placeholders such as `link-to-demo` with the actual links and customize the content further to suit your project's details. This README.md provides a good starting point for documenting your Password Generator project.
