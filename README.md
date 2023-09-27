@@ -1,6 +1,6 @@
 # Password Generator
 
-![Password Generator Screenshot](/Asset/passwordGenerator.png)
+![Password Generator Screenshot](https://github.com/skimran-coder/Password_Generator/blob/main/Asset/passwordGenerator.png)
 
 A simple web-based tool to generate strong and secure passwords with various options.
 
