@@ -16,7 +16,7 @@ const generateButton = document.querySelector('#submit-btn')
 // console.log(lengthNumber);
 
 let passwordLength = 10;
-let checkCount = 0;
+let checkCount = 1;
 handleSlider()
 displayStrength("#ccc")
 
@@ -76,13 +76,13 @@ function CalcStrength(){
     
 
     if ((hasUpperCase && hasLowerCase ) && (hasNumber || hasSymbol) && (passwordLength >= 8)) {
-        displayStrength("green")
+        displayStrength("#0f0")
     }
      else if ((hasUpperCase || hasLowerCase) && (hasNumber || hasSymbol) && passwordLength >= 6) {
-        displayStrength("yellow")
+        displayStrength("#ff0")
      }
      else {
-        displayStrength("red")
+        displayStrength("#f00")
      }
 };
 
@@ -91,7 +91,7 @@ function CalcStrength(){
 
 
 allCheckBoxes.forEach(function (checkbox) {
-  checkbox.addEventListener("change", function () {     
+  checkbox.addEventListener("input", function () {     
     if (checkbox.checked) {
       checkCount++;
     } else {
@@ -104,19 +104,22 @@ allCheckBoxes.forEach(function (checkbox) {
 const copyToClipboard = async function(){
   
   try {
-    await  navigator.clipboard.writeText(displayPassword.value)
+    if (displayPassword.value != "") {
+        await  navigator.clipboard.writeText(displayPassword.value)
     copiedText.classList.remove('active');
 
     setTimeout (function(){
         copiedText.classList.add('active');
     },2000)
+
+    }
+    
   } catch (error) {
-    console.log(`error occured`);
+    console.log(`Error: ${error.message}`);
   }
 } 
 
 copyButton.addEventListener('click', copyToClipboard);
-console.log(inputSlider.value)
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -129,6 +132,11 @@ function shuffleArray(array) {
 const generatePassword = () => {
     let password = "";
     displayPassword.value = "";
+
+    // when no boxes are checked
+    if (checkCount === 0) {
+        return
+    }
 
     // when password length is less than no. of checked boxes
     if (passwordLength < checkCount) {
@@ -152,8 +160,6 @@ const generatePassword = () => {
     if (symbolsCheck.checked) {
         password += generateSymbol()
     }
-
-    console.log(password)
 
     for (let i = checkCount; i < passwordLength; i++) {
         let methodsArray = []
@@ -180,14 +186,12 @@ const generatePassword = () => {
         
     }
 
-    console.log(password)
 
     // shuffle
 
     const passwordArray = Array.from(password);
     shuffleArray(passwordArray);
     const shuffledPassword = passwordArray.join('');
-    console.log(shuffledPassword);
 
     displayPassword.value = shuffledPassword;
     CalcStrength();
