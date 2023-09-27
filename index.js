@@ -18,16 +18,21 @@ const generateButton = document.querySelector('#submit-btn')
 let passwordLength = 10;
 let checkCount = 0;
 handleSlider()
+displayStrength("#ccc")
+
 
 function handleSlider(){
     passwordLength = inputSlider.value
     lengthNumber.innerHTML = passwordLength;
+    const min = inputSlider.min;
+    const max = inputSlider.max;
+    inputSlider.style.backgroundSize = ( (passwordLength - min)*100/(max - min)) + "% 100%"
     // console.log(passwordLength);
     
     
 }
 
-inputSlider.addEventListener('input', function(e){
+inputSlider.addEventListener('input', function(){
     // passwordLength = e.target.value
     // lengthNumber.innerHTML = passwordLength;
     handleSlider();
@@ -55,6 +60,7 @@ function generateSymbol(){
 
 function displayStrength(color){
     strengthColor.style.backgroundColor = color;
+    strengthColor.style.boxShadow = `0px 0px 12px 1px ${color}`;
 }
 
 function CalcStrength(){
@@ -91,7 +97,7 @@ allCheckBoxes.forEach(function (checkbox) {
     } else {
       checkCount--;
     }
-    console.log(checkCount);
+    // console.log(checkCount);
   });
 });
 
@@ -110,10 +116,26 @@ const copyToClipboard = async function(){
 } 
 
 copyButton.addEventListener('click', copyToClipboard);
+console.log(inputSlider.value)
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
 
 const generatePassword = () => {
     let password = "";
     displayPassword.value = "";
+
+    // when password length is less than no. of checked boxes
+    if (passwordLength < checkCount) {
+        passwordLength = checkCount;
+        inputSlider.value = passwordLength;
+        lengthNumber.innerHTML = passwordLength;
+    }
     
 
     if (upperCaseCheck.checked) {
@@ -162,15 +184,12 @@ const generatePassword = () => {
 
     // shuffle
 
-    let passArray = Array.from(password)
-    console.log(passArray);
-    let newPass = "";
-    for (let i = 0; i < passArray.length; i++) {
-        newPass += (passArray[generateRndIntgr(0, passArray.length -1)])
-    }
-    console.log(newPass);
+    const passwordArray = Array.from(password);
+    shuffleArray(passwordArray);
+    const shuffledPassword = passwordArray.join('');
+    console.log(shuffledPassword);
 
-    displayPassword.value = newPass;
+    displayPassword.value = shuffledPassword;
     CalcStrength();
 
     // console.log(password);
