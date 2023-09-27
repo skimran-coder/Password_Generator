@@ -1,3 +1,4 @@
+/* Reset CSS for all elements */
 *,
 *::before,
 *::after {
@@ -7,25 +8,22 @@
     font-family: 'League Spartan', sans-serif;
 }
 
+/* Define color variables in :root */
 :root {
-
     --dk-violet: hsl(268, 75%, 9%);
     --lt-violet: hsl(268, 47%, 21%);
     --lt-violet2: hsl(281, 89%, 26%);
     --vb-violet: hsl(285, 91%, 52%);
     --vb-violet2: hsl(290, 70%, 36%);
-  
     --vb-yellow: hsl(52, 100%, 62%);
-  
-  
     --pl-white: hsl(0, 0%, 100%);
-  
     --vb-cyan: hsl(176, 100%, 44%);
     --vb-cyan2: hsl(177, 92%, 70%);
     --dk-text: hsl(198, 20%, 13%);
 }
 
-.wrapper{
+/* General styling for the wrapper */
+.wrapper {
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
@@ -35,17 +33,17 @@
     background: linear-gradient(90deg, rgba(85, 1, 106, 1) 10%, rgba(47, 2, 83, 1) 43%);
 }
 
-.container{
+/* Styling for the container */
+.container {
     height: 600px;
     width: 450px;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    /* justify-content: center; */
-    /* align-items: center; */
 }
 
-.container h1{
+/* Styling for headings inside the container */
+.container h1 {
     color: var(--pl-white);
     font-size: 2rem;
     opacity: 70%;
@@ -53,14 +51,15 @@
     letter-spacing: 2px;
 }
 
-.display-section{
+/* Styling for the display section */
+.display-section {
     width: 100%;
     display: flex;
     position: relative;
-    
 }
 
-.display-section input{
+/* Styling for the password input field */
+.display-section input {
     position: absolute;
     width: 100%;
     height: 4rem;
@@ -74,7 +73,8 @@
     font-weight: bold;
 }
 
-.display-section input::placeholder{
+/* Styling for the input placeholder */
+.display-section input::placeholder {
     color: var(--vb-yellow);
     font-size: 25px;
     position: absolute;
@@ -84,18 +84,20 @@
     opacity: 70%;
 }
 
-#copy-btn{
+/* Styling for the copy button */
+#copy-btn {
     position: absolute;
     right: 20px;
     bottom: -45px;
     cursor: pointer;
 }
 
-.active{
+/* Styling for the "Copied" text notification */
+.active {
     display: none;
 }
 
-#copiedText{
+#copiedText {
     position: absolute;
     height: fit-content;
     width: fit-content;
@@ -110,6 +112,7 @@
     transition: all 250ms ease-in-out;
 }
 
+/* Styling for the input container */
 .inputContainer {
     background: var(--dk-violet);
     margin-top: 4em;
@@ -124,22 +127,25 @@
     justify-content: space-around;
 }
 
-.length-container{
+/* Styling for the length container */
+.length-container {
     display: flex;
     justify-content: space-between;
 }
 
-#length-text{
+/* Styling for elements related to password length */
+#length-text {
     font-size: 1.5rem;
 }
 
-#password-number{
+#password-number {
     font-size: 1.5rem;
     color: var(--vb-yellow);
     font-weight: bold;
 }
 
-#slider{
+/* Styling for the password length slider */
+#slider {
     appearance: none;
     height: 12px;
     background-color: var(--lt-violet);
@@ -149,11 +155,12 @@
     cursor: pointer;
 }
 
-#slider:focus{
+#slider:focus {
     border: 3px solid var(--vb-yellow);
 }
 
-#slider::-webkit-slider-thumb{
+/* Styling for slider thumbs in different browsers */
+#slider::-webkit-slider-thumb {
     appearance: none;
     height: 30px;
     width: 30px;
@@ -162,7 +169,7 @@
     box-shadow: 0px 0px 20px 0px rgba(255, 229, 61, 0.50);
 }
 
-#slider::-moz-range-thumb{
+#slider::-moz-range-thumb {
     appearance: none;
     height: 30px;
     width: 30px;
@@ -171,34 +178,35 @@
     box-shadow: 0px 0px 20px 0px rgba(255, 229, 61, 0.50);
 }
 
-#slider::-webkit-slider-thumb:hover{
+/* Styling for slider thumbs on hover */
+#slider::-webkit-slider-thumb:hover {
     background: var(--dk-violet);
     border: 2px var(--vb-yellow) solid;
     box-shadow: 0px 0px 25px 5px rgba(255, 229, 61, 0.80);
 }
 
-#slider::-moz-range-thumb:hover{
+#slider::-moz-range-thumb:hover {
     background: var(--dk-violet);
     border: 2px var(--vb-yellow) solid;
     box-shadow: 0px 0px 25px 5px rgba(255, 229, 61, 0.80);
 }
 
-
-
-.checkBoxContainer{
+/* Styling for the checkbox container */
+.checkBoxContainer {
     font-size: 1.2rem;
     letter-spacing: 1.2px;
     line-height: 1.7em;
 }
 
-.checkboxDiv{
+/* Styling for individual checkboxes */
+.checkboxDiv {
     display: flex;
     align-items: center;
     gap: 1rem;
     position: relative;
 }
 
-.checkbox{
+.checkbox {
     appearance: none;
     height: 20px;
     width: 20px;
@@ -207,11 +215,13 @@
     cursor: pointer;
 }
 
-.checkbox:checked{
+/* Styling for checked checkboxes */
+.checkbox:checked {
     background: var(--vb-cyan);
 }
 
-.checkbox:checked::before{
+/* Styling for the checkmark in checked checkboxes */
+.checkbox:checked::before {
     content: "✓";
     font-weight: bold;
     font-size: 1.2rem;
@@ -220,24 +230,26 @@
     left: 2px;
 }
 
-.strength-container{
+/* Styling for the password strength container */
+.strength-container {
     display: flex;
     justify-content: space-between;
 }
 
-.strength-container p{
+/* Styling for password strength text */
+.strength-container p {
     font-size: 1.5rem;
 }
 
-#display-strength{
+/* Styling for the password strength indicator */
+#display-strength {
     height: 25px;
     width: 25px;
     border-radius: 100%;
 }
 
-
-
-#submit-btn{
+/* Styling for the password generation button */
+#submit-btn {
     width: 100%;
     padding: 1rem;
     font-size: 1.2rem;
