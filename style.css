@@ -54,12 +54,6 @@
     text-align: center;
 }
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
-    .container h1{
-        font-size: 1.5rem;
-    }
-}
-
 /* Styling for the display section */
 .display-section {
     width: 100%;
@@ -271,4 +265,15 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+/* media queries for mobile devices */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .container h1{
+        font-size: 1.5rem;
+    }
+
+    .display-section input{
+        font-size: 1.25rem;
+    }
 }
